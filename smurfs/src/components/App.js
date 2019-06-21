@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getSmurfs, deleteSmurf } from '../actions'
 import Smurf from './Smurf';
 import SmurfForm from './SmurfForm';
-import { bindActionCreators } from 'redux';
+import './App.css'
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -20,23 +20,21 @@ class App extends Component {
     this.props.getSmurfs()
   }
 
+
   handleDelete = e => {
     e.preventDefault();
-    this.props.deleteSmurf(e.target.value);
+    let val = e.target.value
+    this.props.deleteSmurf(val);
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="conatiner">
         <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your Redux version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
         <SmurfForm  />
         {this.props.smurfs.map(smurf =>
         <div>
-          <Smurf Smurf={smurf} key={smurf.id}/>
-          <button value={smurf.id} onClick={this.handleDelete}>Delete</button>
+          <Smurf Smurf={smurf} key={smurf.id} click={this.handleDelete}/>
         </div>
         )}
       </div>
