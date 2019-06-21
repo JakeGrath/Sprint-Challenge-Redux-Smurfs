@@ -88,7 +88,7 @@ export const rootReducer = (state = initialState, action) => {
       case DELETE_SMURF_SUCCESS:
         return {
           ...state,
-          smurfs : state.smurfs.filter(smurf => (smurf.id !== action.payload)),
+          smurfs : action.payload,
           deletingSmurf: false
         }
       case DELETE_SMURF_FAILURE:
