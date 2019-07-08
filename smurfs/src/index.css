@@ -2,4 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url('https://vignette.wikia.nocookie.net/smurfs/images/5/50/Wiki-background/revision/latest?cb=20161215155625');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
 }
